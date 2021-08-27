@@ -3,23 +3,32 @@
 <head>
   <title>Tic-Tac-JS</title>
   <script src="https://code.jquery.com/jquery.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.css">
   <style>
     body {
         font-family: sans-serif;
+        background-color: black;
+        color: green;
     }
-
+    h1{
+        width:20%;
+        margin-left:40%;
+        text-align: center; 
+    }
+ 
     #game-board {
-        border: solid 1px black;
+        border: solid 1px green;
         margin-bottom: 2em;
+        width:50%;
+        margin-left: 25%;
+        
     }
-
     #game-board td {
-        border: solid 1px black;
-        height: 80px;
-        width: 80px;
+        border: solid 1px green;
+        color:green;
+        height:120px;
+        width:100px;
         text-align: center;
-        font-size: 45px;
+        font-size: 50px;
     }
   </style>
 </head>
@@ -153,10 +162,7 @@
       // Make next possible move for the computer
 
       for (var i = 0; i < 9; i++) {
-          if (i === 3 || i === 7){
-              board[i] = "o";
-              return board;
-          }
+          
           if (board[i] === null) {
               board[i] = "O";
               return board;
@@ -172,7 +178,7 @@
       var gameOver = false;
 
       if (winner) {
-          $("h1").text(winner + " lost");
+          $("h1").text(winner + " wins");
           gameOver = true;
       }
 
